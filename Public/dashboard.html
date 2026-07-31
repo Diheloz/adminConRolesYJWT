@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Sistema CRUD de usuarios con autenticación JWT y roles.</title>  
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="/css/styles.css">   
+</head>
+<body>    
+    <div class="container-dashboard">        
+        <div class="bienvenido"></div>
+        <div class="modulos">
+            <nav>
+                <a class="home"  href="/dashboard.html">Inicio</a>
+                <a class="admin" href="#">Administracion</a>
+                <a class="directory" href="#">Directorio</a>
+                <a class="report" href="#">Reportes</a>
+            </nav>
+        </div>
+        <div class="container-btnlogout">
+            <button class="btn-logout">Cerrar Sesion</button>
+        </div>
+    </div>
+    <div class="table-title"></div>    
+    <table class="hidden users-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Curso</th>
+                <th>Nota</th>
+                <th class="users-table-action">Accion</th>
+            </tr>
+        </thead>
+        <tbody id="users" class="users-info"></tbody>
+    </table>
+    <div class="hidden container-btn-crear">
+        <button class="btn-crear">Crear Estudiante</button>
+    </div>
+
+    <table class="hidden users-edit">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Curso</th>
+                <th>Nota</th>                
+            </tr>
+        </thead>
+        <tbody class="edit-container"></tbody>
+    </table>
+
+    <div class="hidden form-create">
+        <h3>Crear Estudiante</h3>
+        <form action="" class="form-usuario">
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="nombre" required>
+
+            <label>Curso</label>
+            <input type="text" name="curso" id="curso" required>
+
+            <label>Nota</label>
+            <input type="number" name="nota" min="0" max="10" id="nota" step="0.1" required>
+
+            <input type="submit" value="Crear Estudiante">
+        </form>
+    </div>
+
+    <table class="hidden directory-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Tipo usuario</th>
+                <th class="directory-action">Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="directory" class="directory-info"></tbody>
+    </table>
+    <div class="hidden container-btn-crear-user">
+        <button class="btn-crear-user">Crear Usuario</button>
+    </div>
+    
+    <div class="hidden form-create-user">
+        <h3 id="title-form-directory">Crear usuario</h3>
+        <form action="" class="form-user">
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="name" required>
+
+            <label>Apellido</label>
+            <input type="text" name="apellido" id="apellido" required>
+
+            <label>Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label id="namePassword">Password</label>
+            <input type="password" name="password" id="password" required>
+
+            <label for="user-select">Tipo de usuario:</label>
+            <select name="tipo" id="rol">
+                <option value="">Seleccionar tipo de usuario</option>
+                <option value="admin">Admin</option>
+                <option value="gerente">Gerente</option>
+                <option value="user">User</option>               
+            </select>
+            <input type="submit" value="Crear Usuario" class="btn-update">
+        </form>
+    </div>   
+    
+    <table id="report-table" class="hidden report-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Tipo usuario</th>                
+            </tr>
+        </thead>
+        <tbody id="report" class="report-info"></tbody>
+    </table>
+    <div class="container-btn-graphic hidden">
+        <button class="btn-graphic">Ver grafico</button>
+    </div>
+    <div class="canva hidden">
+        <canvas id="usersChart"></canvas>
+    </div>
+
+
+    <div class="alert"></div>
+   
+    <script src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--Libreria chart.js-->
+    <script  src="/js/dashboard.js" type="module"></script>
+    <script src="/js/report.js" type="module"></script>
+    <script src="/js/commons.js" type="module"></script>
+    
+</body>
+</html>
