@@ -26,7 +26,7 @@ class Directories{
         $stmt->bindParam(":id", $id);
         return $stmt->execute();
     }
-
+    
     public function update($id){
         $pdo = Database::getConnection();
         $stmt = $pdo->prepare("UPDATE " .$this->table. " SET nombre = :nombre, apellido = :apellido, email = :email, password = :password, tipo = :tipo WHERE id = " .$id);

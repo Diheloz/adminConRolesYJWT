@@ -369,8 +369,8 @@ document.addEventListener("DOMContentLoaded",()=>{
                             const row = document.createElement("tr"); 
                             //Muestra los botones si el usuario es admin                       
                             if (usuario.tipo === "admin") {                                
-                                buttons = `<td><button class='btn-edit-directory' data-id='${user.id}' data-name='${user.nombre}' data-surname='${user.apellido}' data-email='${user.email}' data-tipo='${user.tipo}'>Editar</td>                            
-                                <td><button class='btn-delete-directory' data-id='${user.id}' data-name='${user.nombre}'>Eliminar</td>`                            
+                                buttons = `<td><button class='btn-edit-directory' data-id='${user.id}' data-name='${user.nombre}' data-surname='${user.apellido}' data-email='${user.email}' data-tipo='${user.tipo}'>Editar</button>                           
+                                <button class='btn-delete-directory' data-id='${user.id}' data-name='${user.nombre}'>Eliminar</button></td>`                            
                             }                 
                             row.innerHTML = `
                                 <td>${user.nombre}</td>

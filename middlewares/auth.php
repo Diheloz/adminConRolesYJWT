@@ -17,7 +17,7 @@ function validateToken(){
    if(!isset($headers["Authorization"])){
       http_response_code(401);
       echo json_encode(["message"=>"Token requerido"]);
-      exit;
+      exit; 
    }
 
    //Limpiar el token(quita Bearer)
