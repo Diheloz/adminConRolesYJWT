@@ -23,6 +23,20 @@ Aplicación web fullstack que permite la gestión de usuarios y directorio telef
 3. composer install
 4. Ejecutar servidor
 
-## Credenciales
-Admin:
-admin@test.com / 123456
+## Capturas
+
+### Login
+
+![Login](/Public/assets/login.png)
+
+### Dashboard
+
+![Dashboard](/Public/assets/dashboard.png)
+
+### Roles
+
+![Roles](/Public/assets/roles.png)
+
+### Reportes
+
+![Reportes](/Public/assets/reportes.png)

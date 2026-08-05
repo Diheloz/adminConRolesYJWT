@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     const alertBox = document.querySelector(".alert");
     const btnSave = document.createElement("button");    
     const btnLogout = document.querySelector(".btn-logout");
-    const reportTable = document.querySelector(".report-table"); 
+    const reportTable = document.querySelector(".report-table");     
+    const btnDesplegar = document.querySelector(".btn-desplegar");
     let currentUserId = null; //Variable que almacenera el id del usuario que se va a editar
 
     //Se inicializa la funcion importada y todo su contenido
@@ -482,16 +483,18 @@ document.addEventListener("DOMContentLoaded",()=>{
                 const name = document.getElementById("name");
                 const surname = document.getElementById("apellido");
                 const email = document.getElementById("email");
-                const password = document.getElementById("password");
+                const password = document.getElementById("namePassword");//Check if there's a problem with this line, it could be "password" instead of "namePassword"
                 const select = document.getElementById("rol");
                 const title = document.getElementById("title-form-directory");
+                const btnUpdate = document.querySelector(".btn-update");
                 
                 name.value = btn.dataset.name.trim();
                 surname.value = btn.dataset.surname.trim();
                 email.value = btn.dataset.email.trim();
                 select.value = btn.dataset.tipo.trim();  
                 password.innerHTML = "Nuevo password";         
-                title.textContent = "Editar usuario";          
+                title.textContent = "Editar usuario";  
+               // btnUpdate.value = "Editar Usuario"; 
             } catch (error) {
                 console.log('Error: ' + error.message); 
             }             
@@ -553,4 +556,15 @@ document.addEventListener("DOMContentLoaded",()=>{
             console.log('Error: ' + error.message);
         }
     }); 
+    
+    //Muestra u oculta el menu de opciones al hacer click en el boton "Desplegar opciones"
+   containerNavBar.addEventListener("click", (e) => {
+    if (e.target.closest(".btn-desplegar")) {
+        const nav = document.querySelector(".modulos nav");
+        
+        // Añade la clase si no existe, la quita si ya existe
+        nav.classList.toggle("nav-visible"); 
+        btnDesplegar.textContent = nav.classList.contains("nav-visible") ? "Ocultar opciones" : "Desplegar opciones";
+    }
+});
 });

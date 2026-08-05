@@ -222,8 +222,12 @@ a{
     .modulos nav{
         flex-direction:column;        
         position:relative;  
-        left:-13px;     
+        inset:0 0;     /*shorthand for top, bottom, left, right*/ 
+        display:none;        
     }
+    .modulos nav.nav-visible {
+        display: flex; /* Se muestra como flex al hacer clic */
+}
     .container-btnlogout{       
         flex-direction:column;   
         position:relative;    
@@ -234,6 +238,19 @@ a{
     }
      .bienvenido{
         text-align:center;
+    }
+    .btn-desplegar{
+        border:none;
+        border-radius:5px;
+        background-color:#aaa;
+        padding:5px;
+        cursor:pointer;
+        position:relative;    
+        margin:0 auto; 
+        height:30px;
+        width:150px;
+        z-index:1000;
+        display:block;
     }
 }
 
